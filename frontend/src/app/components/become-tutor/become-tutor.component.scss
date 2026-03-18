@@ -1,0 +1,328 @@
+/* ================= GLOBAL SECTION ================= */
+
+section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+  background: linear-gradient(135deg, #6a3de8, #a855f7);
+  color: white;
+  text-align: center;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.hero span {
+  color: #ffd700;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+  font-weight: 600;
+  color: #5a189a;
+}
+
+/* ================= WHY SECTION ================= */
+
+.why-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.why-card {
+  background: linear-gradient(135deg, #f3e8ff, #ffffff);
+  padding: 40px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(106, 61, 232, 0.08);
+  border-top: 4px solid #7b2cbf;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(106, 61, 232, 0.18);
+}
+
+/* ================= PROCESS SECTION ================= */
+
+.process-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.process-card {
+  background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+  padding: 40px;
+  border-radius: 20px;
+  width: 280px;
+  text-align: center;
+  color: white;
+  transition: 0.3s ease;
+  box-shadow: 0 15px 35px rgba(123, 44, 191, 0.25);
+}
+
+.process-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(123, 44, 191, 0.35);
+}
+
+.process-card span {
+  display: inline-block;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 50px;
+}
+
+/* ================= FORM SECTION ================= */
+
+.form-section {
+  background: #f9fafe;
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  background: white;
+  padding: 50px;
+  border-radius: 30px;
+  width: 700px;
+  max-width: 95%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= STEPPER ================= */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0d7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #6a3de8;
+  transition: 0.3s ease;
+}
+
+.step.active {
+  background: linear-gradient(135deg, #6a3de8, #a855f7);
+  color: white;
+  box-shadow: 0 5px 15px rgba(106, 61, 232, 0.4);
+}
+
+.line {
+  width: 60px;
+  height: 4px;
+  background: #e0d7ff;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+/* ================= FORM ================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #444;
+}
+
+input,
+textarea,
+select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #7b2cbf;
+  box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.1);
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* ================= TWO COLUMN ================= */
+
+.two-column {
+  display: flex;
+  gap: 20px;
+}
+
+.two-column > div {
+  flex: 1;
+}
+
+/* ================= TOPIC ROW ================= */
+
+.topic-row {
+  display: flex;
+  gap: 15px;
+}
+
+.topic-row input {
+  flex: 2;
+}
+
+.topic-row select {
+  flex: 1;
+}
+
+/* ================= TEACHING STYLE CHIPS ================= */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #f3e8ff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.chip:hover {
+  background: #e0cfff;
+}
+
+.chip.active {
+  background: linear-gradient(135deg, #6a3de8, #a855f7);
+  color: white;
+  border: none;
+}
+
+/* ================= BUTTONS ================= */
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #6a3de8, #d42b7c);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(106, 61, 232, 0.25);
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #333;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .form-card {
+    padding: 30px;
+  }
+
+  .two-column {
+    flex-direction: column;
+  }
+
+  .topic-row {
+    flex-direction: column;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

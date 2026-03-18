@@ -1,0 +1,218 @@
+<app-header></app-header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-left">
+      <span class="badge">🚀 Join TutorFind</span>
+      <h1>
+        Share Your Knowledge.<br />
+        <span>Inspire Students.</span>
+      </h1>
+      <p>
+        Turn your expertise into income. Teach what you love and help
+        students achieve real success.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY SECTION ================= -->
+<section class="why-section">
+  <div class="container">
+    <h2 class="section-title">Why Teach With TutorFind?</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>Flexible Schedule</h4>
+        <p>Teach whenever it suits you. You're in control.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Competitive Earnings</h4>
+        <p>Set your own rates and earn what you deserve.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Smart Matching</h4>
+        <p>Get matched with students based on your expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="process-section">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+
+    <div class="process-grid">
+      <div class="process-card">
+        <span>1</span>
+        <h4>Apply Online</h4>
+        <p>Submit your application with subject expertise.</p>
+      </div>
+
+      <div class="process-card">
+        <span>2</span>
+        <h4>Get Verified</h4>
+        <p>Our team reviews your profile and credentials.</p>
+      </div>
+
+      <div class="process-card">
+        <span>3</span>
+        <h4>Start Teaching</h4>
+        <p>Connect with students and begin earning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPLICATION FORM ================= -->
+<section class="form-section">
+  <div class="container">
+    <div class="form-card">
+
+      <!-- STEP INDICATOR -->
+      <div class="stepper">
+        <div class="step" [class.active]="step === 1">
+          <span>1</span>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step" [class.active]="step === 2">
+          <span>2</span>
+        </div>
+      </div>
+
+      <!-- ================= STEP 1 ================= -->
+      <div *ngIf="step === 1">
+        <h2>Basic Information</h2>
+
+        <form>
+
+          <label>Full Name</label>
+          <input
+            type="text"
+            placeholder="Enter your full name"
+            [(ngModel)]="tutor.name"
+            name="name"
+          />
+
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            [(ngModel)]="tutor.email"
+            name="email"
+          />
+
+          <label>Professional Headline</label>
+          <input
+            type="text"
+            placeholder="e.g., PhD in Mathematics | Calculus Expert"
+            [(ngModel)]="tutor.headline"
+            name="headline"
+          />
+
+          <label>About You</label>
+          <textarea
+            placeholder="Tell students about your background, teaching philosophy, and what makes you unique..."
+            [(ngModel)]="tutor.bio"
+            name="bio"
+          ></textarea>
+
+          <div class="two-column">
+            <div>
+              <label>Years of Experience</label>
+              <input
+                type="number"
+                placeholder="e.g., 5"
+                [(ngModel)]="tutor.experience"
+                name="experience"
+              />
+            </div>
+
+            <div>
+              <label>Hourly Rate ($)</label>
+              <input
+                type="number"
+                placeholder="e.g., 25"
+                [(ngModel)]="tutor.rate"
+                name="rate"
+              />
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="button" (click)="nextStep()">
+              Continue
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- ================= STEP 2 ================= -->
+      <div *ngIf="step === 2">
+        <h2>Your Expertise</h2>
+
+        <form (ngSubmit)="submitApplication()">
+
+          <label>Subjects You Teach</label>
+          <input
+            type="text"
+            placeholder="Add a subject"
+            [(ngModel)]="tutor.subject"
+            name="subject"
+          />
+
+          <label>Topic Expertise</label>
+          <div class="topic-row">
+            <input
+              type="text"
+              placeholder="Topic name"
+              [(ngModel)]="tutor.topic"
+              name="topic"
+            />
+
+            <select [(ngModel)]="tutor.level" name="level">
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+
+          <label>Teaching Style</label>
+          <div class="chips">
+            <span
+              *ngFor="let style of teachingStyleOptions"
+              class="chip"
+              [class.active]="isSelected(style)"
+              (click)="toggleStyle(style)"
+            >
+              {{ style }}
+            </span>
+          </div>
+
+          <div class="button-row">
+            <button
+              type="button"
+              class="secondary"
+              (click)="prevStep()"
+            >
+              Back
+            </button>
+
+            <button type="submit">
+              Submit Application
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

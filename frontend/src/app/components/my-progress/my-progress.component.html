@@ -1,0 +1,62 @@
+<div class="progress-wrapper">
+
+  <!-- Header -->
+  <div class="header-section">
+    <h2>Learning Progress</h2>
+    <p>Hello, {{ userName }} 👋 Keep growing!</p>
+
+    <div class="level-badge">
+      {{ level }}
+    </div>
+  </div>
+
+  <!-- Top Stats -->
+  <div class="stats-grid">
+
+    <div class="card gradient-card">
+      <h3>{{ progress.topicsTracked }}</h3>
+      <p>Topics Tracked</p>
+    </div>
+
+    <div class="card gradient-card">
+      <h3>{{ progress.topicsMastered }}</h3>
+      <p>Topics Mastered</p>
+    </div>
+
+    <div class="card gradient-card">
+      <h3>{{ progress.inProgress }}</h3>
+      <p>In Progress</p>
+    </div>
+
+    <div class="card mastery-card">
+      <div class="circle">
+        {{ progress.avgMastery }}%
+      </div>
+      <p>Average Mastery</p>
+    </div>
+
+  </div>
+
+  <!-- Subject Breakdown -->
+  <div class="subjects-section">
+    <h3>Subject Mastery</h3>
+
+    <div class="subject-card" *ngFor="let subject of subjects">
+
+      <div class="subject-top">
+        <span>{{ subject.name }}</span>
+        <span>{{ subject.mastery }}%</span>
+      </div>
+
+      <div class="progress-bar">
+        <div 
+          class="progress-fill"
+          [style.width.%]="subject.mastery">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <div class="logo">
+      <img src="data:image/svg+xml;utf8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3C!--%20Background%20--%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22%236A5AE0%22%3E%3C%2Frect%3E%0A%0A%20%20%3C!--%20Left%20Page%20--%3E%0A%20%20%3Cpath%20d%3D%22M18%2022%0A%20%20%20%20%20%20%20Q18%2018%2024%2018%0A%20%20%20%20%20%20%20H30%0A%20%20%20%20%20%20%20Q32%2018%2032%2020%0A%20%20%20%20%20%20%20V44%0A%20%20%20%20%20%20%20Q32%2046%2030%2046%0A%20%20%20%20%20%20%20H24%0A%20%20%20%20%20%20%20Q18%2046%2018%2042%0A%20%20%20%20%20%20%20Z%22%20fill%3D%22white%22%3E%3C%2Fpath%3E%0A%0A%20%20%3C!--%20Right%20Page%20--%3E%0A%20%20%3Cpath%20d%3D%22M46%2022%0A%20%20%20%20%20%20%20Q46%2018%2040%2018%0A%20%20%20%20%20%20%20H34%0A%20%20%20%20%20%20%20Q32%2018%2032%2020%0A%20%20%20%20%20%20%20V44%0A%20%20%20%20%20%20%20Q32%2046%2034%2046%0A%20%20%20%20%20%20%20H40%0A%20%20%20%20%20%20%20Q46%2046%2046%2042%0A%20%20%20%20%20%20%20Z%22%20fill%3D%22white%22%3E%3C%2Fpath%3E%0A%0A%20%20%3C!--%20Center%20Fold%20--%3E%0A%20%20%3Cline%20x1%3D%2232%22%20y1%3D%2220%22%20x2%3D%2232%22%20y2%3D%2244%22%20stroke%3D%22%236A5AE0%22%20stroke-width%3D%222%22%3E%3C%2Fline%3E%0A%3C%2Fsvg%3E" alt="TutorFind" />
+    </div>
+
+    <h1 class="auth-title">Welcome to TutorFind</h1>
+    <p class="auth-subtitle">Sign in to continue</p>
+
+<button class="google-btn" (click)="loginWithGoogle()">
+        <img src="data:image/png;base64,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" alt="Google" />
+      Continue with Google
+    </button>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input
+        class="auth-input"
+        type="email"
+        placeholder="you@example.com"
+        [(ngModel)]="email"
+      />
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input
+        class="auth-input"
+        type="password"
+        placeholder="••••••••"
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <button class="primary-btn" (click)="login()">Sign in</button>
+
+    <div class="auth-footer">
+      <a href="#">Forgot password?</a>
+      <a (click)="goToRegister()">Sign up</a>
+    </div>
+
+  </div>
+</div>

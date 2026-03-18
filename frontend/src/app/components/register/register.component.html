@@ -1,0 +1,41 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <a class="back-link" (click)="goToLogin()">← Back to sign in</a>
+
+    <h1 class="auth-title">Create your account</h1>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input
+        class="auth-input"
+        type="email"
+        placeholder="you@example.com"
+        [(ngModel)]="email"
+      />
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input
+        class="auth-input"
+        type="password"
+        placeholder="Min. 8 characters"
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <div class="input-group">
+      <label>Confirm Password</label>
+      <input
+        class="auth-input"
+        type="password"
+        placeholder="Re-enter password"
+        [(ngModel)]="confirmPassword"
+      />
+    </div>
+
+    <button class="primary-btn" (click)="register()">Create account</button>
+
+  </div>
+</div>

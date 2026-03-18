@@ -1,0 +1,90 @@
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Find Your Perfect Tutor</h1>
+  <p>
+    Search by topic, concept, or skill to find tutors who specialize in exactly
+    what you need
+  </p>
+
+  <input
+    type="text"
+    placeholder="Search by topic, subject or tutor name..."
+    [(ngModel)]="searchText"
+  />
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- FILTERS -->
+  <aside class="filters">
+    <h3>Filters</h3>
+
+    <!-- SUBJECT FILTER -->
+    <label>Subject</label>
+    <select [(ngModel)]="selectedSubject">
+      <option *ngFor="let subject of subjects" [value]="subject">
+        {{ subject }}
+      </option>
+    </select>
+
+    <!-- RATING FILTER -->
+    <label>Minimum Rating</label>
+    <div class="rating-filter">
+      <button (click)="minRating = 4">⭐ 4+</button>
+      <button (click)="minRating = 4.5">⭐ 4.5+</button>
+      <button (click)="minRating = 4.8">⭐ 4.8+</button>
+      <button (click)="minRating = 0">All</button>
+    </div>
+  </aside>
+
+  <!-- TUTORS -->
+  <section class="tutors">
+    <h3>{{ filteredTutors.length }} tutors found</h3>
+
+    <div class="card" *ngFor="let tutor of filteredTutors">
+
+      <!-- HEADER -->
+      <div class="card-header">
+        <div>
+          <h4>{{ tutor.name }}</h4>
+          <p class="qualification">{{ tutor.qualification }}</p>
+        </div>
+        <span class="rating">⭐ {{ tutor.rating }}</span>
+      </div>
+
+      <!-- SUBJECT -->
+      <p class="subject">{{ tutor.subject }}</p>
+
+      <!-- TOPICS -->
+      <div class="topics">
+        <div class="topic" *ngFor="let topic of tutor.topics">
+          <strong>{{ topic.name }}</strong>
+          <span>{{ topic.success }} success · {{ topic.helped }} helped</span>
+        </div>
+      </div>
+
+      <!-- TAGS -->
+      <div class="tags">
+        <span *ngFor="let tag of tutor.tags">{{ tag }}</span>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <div class="price">${{ tutor.price }}/hr</div>
+
+        <div class="actions">
+          <button class="secondary" (click)="viewProfile(tutor.id)">
+            View Profile
+          </button>
+          <button (click)="bookSession(tutor.id)">
+            Book Session
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+

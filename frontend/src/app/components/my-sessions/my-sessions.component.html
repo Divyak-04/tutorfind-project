@@ -1,0 +1,109 @@
+<div class="sessions-wrapper">
+
+  <!-- Header -->
+  <div class="header-section">
+    <h2>My Sessions</h2>
+    <p>View and manage your tutoring sessions</p>
+
+    <div class="welcome">
+      Hello, {{ userName }} 👋
+    </div>
+
+    <div class="achievement-badge">
+      {{ achievement }}
+    </div>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs">
+    <button [class.active]="filter==='all'" (click)="filter='all'">All</button>
+    <button [class.active]="filter==='Approved'" (click)="filter='Approved'">Approved</button>
+    <button [class.active]="filter==='Completed'" (click)="filter='Completed'">Completed</button>
+    <button [class.active]="filter==='Pending'" (click)="filter='Pending'">Pending</button>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="filteredSessions.length === 0" class="empty-state">
+    <h3>No sessions found</h3>
+  </div>
+
+  <!-- Session Cards -->
+  <div class="sessions-grid">
+
+    <div class="session-card" *ngFor="let session of filteredSessions">
+
+      <div class="card-top">
+        <div>
+          <h3>{{ session.subject }}</h3>
+          <p class="tutor-name">with {{ session.tutor }}</p>
+        </div>
+
+        <span 
+          class="status-badge"
+          [ngClass]="session.status.toLowerCase()">
+          {{ session.status }}
+        </span>
+      </div>
+
+      <div class="card-details">
+        <span>📅 {{ session.date }}</span>
+        <span>⏰ {{ session.time }}</span>
+        <span>⏳ {{ session.duration }}</span>
+      </div>
+
+      <div class="price">
+        ${{ session.price }}
+      </div>
+
+      <!-- Pending Section -->
+      <div *ngIf="session.status === 'Pending'" class="pending-box">
+        Awaiting Approval
+      </div>
+
+      <!-- Progress only if not pending -->
+      <div 
+        class="progress-container"
+        *ngIf="session.status !== 'Pending'">
+
+        <div class="progress-label">
+          Progress {{ session.progress }}%
+        </div>
+
+        <div class="progress-bar">
+          <div 
+            class="progress-fill"
+            [style.width.%]="session.progress">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Actions -->
+      <div class="card-actions">
+
+        <button 
+          *ngIf="session.status === 'Approved'" 
+          class="join-btn">
+          Join Session
+        </button>
+
+        <button 
+          *ngIf="session.status === 'Completed'" 
+          class="rebook-btn"
+          (click)="rebook(session.tutor)">
+          Rebook
+        </button>
+
+        <button 
+          *ngIf="session.status === 'Pending'" 
+          class="view-btn">
+          View Tutor
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

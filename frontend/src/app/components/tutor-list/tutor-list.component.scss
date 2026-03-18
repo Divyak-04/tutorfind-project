@@ -1,0 +1,114 @@
+.hero {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #6a5cff, #8f6cff);
+  color: white;
+
+  input {
+    margin-top: 20px;
+    width: 60%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+  }
+}
+
+.container {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+}
+
+.filters {
+  width: 220px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+
+  label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+  }
+
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+
+  .rating-filter button {
+    margin: 5px 5px 0 0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+}
+
+.tutors {
+  flex: 1;
+}
+
+.card {
+  display: flex;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 14px;
+  gap: 20px;
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .info {
+    flex: 1;
+  }
+
+  .rating {
+    color: #f5a623;
+    font-weight: 600;
+  }
+
+  .tags span {
+    background: #eef;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-size: 12px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .price {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .actions button {
+    margin-left: 10px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .primary {
+    background: #6a5cff;
+    color: white;
+    border: none;
+  }
+
+  .secondary {
+    background: white;
+    border: 1px solid #ccc;
+  }
+}

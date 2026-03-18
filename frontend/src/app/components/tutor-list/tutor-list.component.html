@@ -1,0 +1,69 @@
+<!-- HERO -->
+<section class="hero">
+  <h1>Find Your Perfect Tutor</h1>
+  <p>Search by subject, skill, or tutor name</p>
+
+  <input
+    type="text"
+    placeholder="Search (e.g. Calculus, Python)"
+    [(ngModel)]="searchText"
+  />
+</section>
+
+<div class="container">
+
+  <!-- FILTERS -->
+  <aside class="filters">
+    <h3>Filters</h3>
+
+    <label>Subject</label>
+    <select [(ngModel)]="selectedSubject">
+      <option value="All">All</option>
+      <option>Mathematics</option>
+      <option>Physics</option>
+      <option>Computer Science</option>
+    </select>
+
+    <label>Minimum Rating</label>
+    <div class="rating-filter">
+      <button (click)="minRating = 4">⭐ 4+</button>
+      <button (click)="minRating = 4.5">⭐ 4.5+</button>
+      <button (click)="minRating = 4.8">⭐ 4.8+</button>
+    </div>
+  </aside>
+
+  <!-- TUTOR CARDS -->
+  <section class="tutors">
+    <h3>{{ filteredTutors.length }} tutors found</h3>
+
+    <div class="card" *ngFor="let tutor of filteredTutors">
+
+      <img [src]="tutor.image" />
+
+      <div class="info">
+        <h4>{{ tutor.name }}</h4>
+        <p>{{ tutor.qualification }}</p>
+        <span class="rating">⭐ {{ tutor.rating }}</span>
+
+        <div class="tags">
+          <span *ngFor="let tag of tutor.tags">{{ tag }}</span>
+        </div>
+
+        <div class="footer">
+          <div class="price">${{ tutor.price }}/hr</div>
+
+          <div class="actions">
+            <button class="secondary" (click)="viewProfile(tutor.id)">
+              View Profile
+            </button>
+            <button class="primary" (click)="bookSession(tutor.id)">
+              Book Session
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
